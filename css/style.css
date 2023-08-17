@@ -1,0 +1,146 @@
+body {
+  background-image: linear-gradient(to top, black 0%, black 100%);
+  width: 80%;
+  margin: 60px auto;
+  font-family: "Cerebri Sans", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  position: fixed;
+}
+
+input {
+  color: White;
+  background-color: black;
+  border: solid;
+  border-color: white;
+  box-sizing: border-box;
+  position: fixed;
+  margin-top: 50px;
+}
+
+.Searchbar {
+  max-width: 80%;
+  min-width: 50%;
+}
+
+.localSubmit {
+  position: fixed;
+  margin-left: 25%;
+}
+
+.col-city {
+  text-transform: uppercase;
+}
+
+.search {
+  position: fixed;
+  margin-left: 3%;
+}
+.city {
+  font-size: 40px;
+  padding-top: 30px;
+  padding-bottom: -0px;
+  margin-top: 80px;
+  text-transform: uppercase;
+  /* margin-top: 200px; Why does this not work ? */
+}
+
+.time {
+  color: #5b6275;
+  font-size: 18px;
+  display: block;
+  margin-top: -20px;
+  margin-left: 320px;
+}
+.mood {
+  color: #5b6275;
+  font-size: 32px;
+  display: block;
+  margin-top: -30px;
+  margin-bottom: 0;
+  padding-bottom: -20px;
+  text-transform: uppercase;
+}
+
+.day {
+  font-size: 42px;
+  color: #939aa9;
+  display: block;
+  padding-left: 50px;
+  margin-top: -25px;
+}
+
+.degrees,
+.celcius {
+  font-size: 46px;
+}
+
+.rainCloud {
+  font-size: 18px;
+}
+
+.farenheit {
+  display: block;
+  color: #5b6275;
+  font-size: 26px;
+  margin-left: 120px;
+  margin-top: -50px;
+}
+
+.bigIcon {
+  display: block;
+  margin-left: 100px;
+  margin-top: 10px;
+}
+
+.degrees {
+  display: block;
+  text-align: left;
+  margin-left: 130px;
+  margin-top: -30px;
+}
+
+.values {
+  display: block;
+  text-align: right;
+  color: #939aa9;
+  font-size: 28px;
+  margin-top: -150px;
+  display: fixed;
+  margin-left: 30%;
+  min-width: 50%;
+  max-width: 60%;
+}
+
+.week {
+  display: fixed;
+  max-width: 90%;
+  padding-top: 30px;
+}
+
+.days,
+.weekdegrees {
+  color: #5b6275;
+}
+
+.smallIcon {
+  margin-bottom: 20px;
+}
+
+.fa-cloud-rain {
+  position: fixed;
+  text-align: center;
+  display: block;
+  margin-left: 10px;
+}
+
+h1,
+div {
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeatherApp</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/6dc297f8d9.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>WTHR.</h1>
+      <div >
+        <div class="row">
+        <div class="col">
+        <form 
+        id="searchCityBar" 
+        class="CitySearch" 
+        action="submit">
+          <input
+            class="Searchbar"
+            type="text"
+            name="name"
+            placeholder="enter a city"
+            id="searchBar"
+            value=""
+            required
+          /></div>
+          <div class="col">
+          <input id="locality"
+          class="localSubmit" 
+          type="submit" 
+          value=" " />
+        </div>
+        <div class="col">
+          <input 
+          class="search" 
+          type="submit" 
+          id="citySearch" 
+          value="SRCH" 
+          />
+        </div>
+        </div>
+        </form>
+      </div>
+
+      <div class="row">
+        <div id=yourCity class="col city">
+          BRUSSELS</div>
+          <div class="time" id="time">20:15</div>
+          <div class="day" id="day" >SUNDAY</div>
+          <br />
+          <div id="mood" class="mood">RAIN</div>
+        </div>
+        <!-- <div class="col day">SUNDAY</div> -->
+        <!-- <div class="day">SUNDAY</div> -->
+        <!-- <div class="col mood">RAIN</div> -->
+        <!-- <div class="mood">RAIN</div> -->
+
+        <div class="row">
+          
+            <div class="bigIcon"><i class="fa-solid fa-cloud-rain"></i></div>
+            <div 
+            class="degrees"
+            id = "degrees"
+            >21°<span id="celciusSymbol"> <a href="#" 
+            id="celciusLink">
+            C </span>
+            <div class="col temp">
+              <div id ="farenheitSymbol"
+              ><a href="#" 
+              id="farenheitLink"
+              class="col farenheit">°F</a>
+            </div>
+          </a>
+        </div>
+        <div class="values">
+          <span id="prcp">
+            Prcp : 42%
+          </span>
+            <br />
+            <span id="wnd">
+            Wnd : 8km/h
+            </span>  
+        </div>
+      </div>
+    </div>
+  </div>
+      <br />
+      <div class="row week">
+        <div class="col days">
+          MON
+          <br />
+          <div class="smallIcon"><i class="fa-solid fa-cloud-rain"></i>
+          </div>
+          21°C
+        
+        </div>
+        <div class="col days">
+          TUE
+          <br />
+          <div class="smallIcon"><i class="fa-solid fa-cloud-rain"></i></div>
+          21°C
+        </div>
+        <div class="col days">
+          WED
+          <br />
+          <div class="smallIcon"><i class="fa-solid fa-cloud-rain"></i></div>
+          21°C
+        </div>
+        <div class="col days">
+          THU
+          <br />
+          <div class="smallIcon"><i class="fa-solid fa-cloud-rain"></i></div>
+          21°C
+        </div>
+        <div class="col days">
+          FRI
+          <br />
+          <div class="smallIcon"><i class="fa-solid fa-cloud-rain"></i></div>
+          21°C
+        </div>
+        <div class="col days">
+          SAT
+          <br />
+          <div class="smallIcon"><i class="fa-solid fa-cloud-rain"></i></div>
+          21°C
+        </div>
+        <div class="col days">
+          SUN
+          <br />
+          <div class="smallIcon"><i class="fa-solid fa-cloud-rain"></i></div>
+          21°C
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"> </script>
+  </body>
+</html>
