@@ -115,6 +115,11 @@ input {
   margin-left: 10px;
 }
 
+.sourcelink {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
 h1,
 div {
   color: white;
