@@ -1,6 +1,6 @@
 body {
   background-image: linear-gradient(to top, black 0%, black 100%);
-  width: 80%;
+  width: 40%;
   margin: 60px auto;
   font-family: "Cerebri Sans", Helvetica, Arial, sans-serif;
 }
@@ -20,108 +20,88 @@ input {
 }
 
 .Searchbar {
-  max-width: 80%;
-  min-width: 50%;
+  max-width: 30%;
+  min-width: 30%;
+  margin-top: 3%;
 }
 
 .localSubmit {
   position: fixed;
-  margin-left: 25%;
-}
-
-.col-city {
-  text-transform: uppercase;
+  margin-left: 22%;
+  margin-top: 3%;
 }
 
 .search {
   position: fixed;
-  margin-left: 3%;
+  margin-left: 4%;
+  margin-top: 3%;
 }
 .city {
+  display: fixed;
   font-size: 40px;
-  padding-top: 30px;
-  padding-bottom: -0px;
-  margin-top: 80px;
+  padding-top: 12%;
+  padding-bottom: 0px;
+  margin-top: 15%;
   text-transform: uppercase;
   /* margin-top: 200px; Why does this not work ? */
-}
-
-.time {
-  color: #5b6275;
-  font-size: 18px;
-  display: block;
-  margin-top: -20px;
-  margin-left: 320px;
-}
-.mood {
-  color: #5b6275;
-  font-size: 32px;
-  display: block;
-  margin-top: -30px;
-  margin-bottom: 0;
-  padding-bottom: -20px;
-  text-transform: uppercase;
 }
 
 .day {
   font-size: 42px;
   color: #939aa9;
-  display: block;
-  padding-left: 50px;
-  margin-top: -25px;
+  margin-top: -90px;
+  padding-top: -90px;
+  display: inline-block;
 }
 
-.degrees,
-.celcius {
-  font-size: 46px;
-}
-
-.rainCloud {
-  font-size: 18px;
-}
-
-.farenheit {
-  display: block;
+.time {
   color: #5b6275;
-  font-size: 26px;
-  margin-left: 120px;
-  margin-top: -50px;
+  font-size: 18px;
+  display: fixed;
+  margin-top: -40%;
+  margin-left: 2%;
+}
+.mood {
+  color: #5b6275;
+  display: inline-block;
+  font-size: 32px;
+  margin-top: -40%;
 }
 
 .bigIcon {
-  display: block;
-  margin-left: 100px;
-  margin-top: 10px;
+  background-color: red;
+  display: inline-block;
+  margin-top: -100px;
 }
 
 .degrees {
-  display: block;
-  text-align: left;
-  margin-left: 130px;
-  margin-top: -30px;
+  font-size: 46px;
+  display: inline-block;
+  margin-left: 15%;
+  margin-top: -5%;
 }
 
 .values {
   display: block;
   text-align: right;
   color: #939aa9;
-  font-size: 28px;
-  margin-top: -150px;
-  display: fixed;
-  margin-left: 30%;
-  min-width: 50%;
-  max-width: 60%;
+  font-size: 20px;
+  margin-top: -30%;
+  margin-left: 48%;
+  min-width: 30%;
+  max-width: 30%;
 }
 
 .week {
   display: fixed;
   max-width: 90%;
-  padding-top: 30px;
+  padding-top: 20%;
 }
 
 .days,
 .weekdegrees {
   color: #5b6275;
+  max-width: 40%;
 }
 
 .smallIcon {

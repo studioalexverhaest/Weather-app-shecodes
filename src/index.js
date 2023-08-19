@@ -61,30 +61,29 @@ function switchTemp(event) {
   // celciusSymbok.innerHTML = `F`;
 }
 
-let weirdTemp = document.querySelector(`#farenheitLink`);
-weirdTemp.addEventListener("click", switchTemp);
+// let weirdTemp = document.querySelector(`#farenheitLink`);
+// weirdTemp.addEventListener("click", switchTemp);
 
-function showWeather(response) {
-  console.log(response);
-}
+// function showWeather(response) {
+//   console.log(response);
+// }
 
 ////// IMPLEMENT SEARCH ENGINE
 
-// search-bar
 function handleSearch(response) {
-  console.log(response.data.wind.speed);
+  console.log(response.data);
   let returnTemp = document.querySelector(`#degrees`);
-  returnTemp.innerHTML = `${response.data.main.temp}°C`;
+  let temperature = Math.round(response.data.main.temp);
+  returnTemp.innerHTML = `${temperature}°C`;
   let returnMood = document.querySelector(`#mood`);
   returnMood.innerHTML = `${response.data.weather[0].description}`;
-  // let returnWind = document.querySelector(`#wnd`);
-  // returnWind.innerHTML = `${response.data.wind.speed} km/h`;
-  // let returnPrcp = document.querySelector(`#prcp`);
-  // returnPrcp.innerHTML = `Prcp : ${response.data.main.humidity} %`;
+  let returnWind = document.querySelector(`#wind`);
+  returnWind.innerHTML = `${response.data.wind.speed} km/h`;
+  let returnPrcp = document.querySelector(`#prcp`);
+  returnPrcp.innerHTML = `Prcp : ${response.data.main.humidity} %`;
 }
 
-function replaceTemp() {}
-
+// search-bar
 function liveSearch(position) {
   let searchInput = document.querySelector(`#searchBar`);
 
@@ -98,6 +97,8 @@ function liveSearch(position) {
   console.log(cityName);
 }
 
+form.addEventListener("submit", liveSearch);
+
 // // local-button
 
 let localButton = document.querySelector(`#locality`);
@@ -105,13 +106,30 @@ localButton.addEventListener("click", handleButton);
 
 function handleButton(event) {
   navigator.geolocation.getCurrentPosition(retrievePosition);
+  console.log("click");
 }
 
 function retrievePosition(position) {
+  console.log(position);
   let apiKey = "64469ac67e6dc941feb5b50915a18dc7";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
 
-  axios.get(url).then(handleSearch);
+  axios.get(url).then(handleLocalSearch);
+}
+
+function handleLocalSearch(response) {
+  console.log(response.data.sys.name);
+  let returnCity = document.querySelector(`#yourCity`);
+  returnCity.innerHTML = `here`;
+  let returnTemp = document.querySelector(`#degrees`);
+  let temperature = Math.round(response.data.main.temp);
+  returnTemp.innerHTML = `${temperature}°C`;
+  let returnMood = document.querySelector(`#mood`);
+  returnMood.innerHTML = `${response.data.weather[0].description}`;
+  let returnWind = document.querySelector(`#wind`);
+  returnWind.innerHTML = `${response.data.wind.speed} km/h`;
+  let returnPrcp = document.querySelector(`#prcp`);
+  returnPrcp.innerHTML = `Prcp : ${response.data.main.humidity} %`;
 }
