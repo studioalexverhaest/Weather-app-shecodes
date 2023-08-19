@@ -115,17 +115,26 @@ input {
   margin-left: 10px;
 }
 
-.sourcelink {
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-}
 h1,
 div {
   color: white;
 }
 
-a {
+a:link {
   text-decoration: none;
   cursor: pointer;
+  color: white;
+}
+
+a:visited {
+  color: white;
+}
+
+a:hover {
+  color: blue;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
 }
