@@ -51,23 +51,6 @@ function search(event) {
 let form = document.querySelector("#searchCityBar");
 form.addEventListener("submit", search);
 
-// switch temp between Farenheit and Celcius
-// function switchTemp(event) {
-//   let degreeNumber = document.querySelector(`#degrees`);
-//   let farenheitSymbol = document.querySelector(`#farenheitSymbol`);
-//   degreeNumber.innerHTML = `56`;
-//   farenheitSymbol.innerHTML = `C`;
-// let celciusSymbol = document.querySelector(`#celciusSymbol`);
-// celciusSymbok.innerHTML = `F`;
-// }
-
-// let weirdTemp = document.querySelector(`#farenheitLink`);
-// weirdTemp.addEventListener("click", switchTemp);
-
-// function showWeather(response) {
-//   console.log(response);
-// }
-
 ////// IMPLEMENT SEARCH ENGINE
 
 function handleSearch(response) {
@@ -89,28 +72,6 @@ function handleSearch(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 }
-
-//search on load
-function search(city) {
-  let apiKey = "082d3d02ffdb12f2fd9b259e2ced1d0d";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(handleSearch);
-}
-
-// search-bar
-function liveSearch(position) {
-  let searchInput = document.querySelector(`#searchBar`);
-  let cityName = document.querySelector(`#yourCity`);
-  cityName = `${searchInput.value}`;
-
-  let apiKey = "082d3d02ffdb12f2fd9b259e2ced1d0d";
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=${apiKey}`;
-
-  axios.get(url).then(handleSearch);
-  console.log(cityName);
-}
-
-form.addEventListener("submit", liveSearch);
 
 // // local-button
 
@@ -134,6 +95,7 @@ function retrievePosition(position) {
 
 function handleLocalSearch(response) {
   console.log(response.data.sys.name);
+
   let returnCity = document.querySelector(`#yourCity`);
   returnCity.innerHTML = `here`;
   let returnTemp = document.querySelector(`#degrees`);
@@ -173,5 +135,3 @@ let celciusIcon = document.querySelector(`#celcius-icon`);
 fahrenheitIcon.addEventListener("click", displayCelciusTemperature);
 
 let celciusTemperature = null;
-
-search("New York");
