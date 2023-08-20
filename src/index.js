@@ -81,6 +81,11 @@ function handleSearch(response) {
   returnWind.innerHTML = `${response.data.wind.speed} km/h`;
   let returnPrcp = document.querySelector(`#prcp`);
   returnPrcp.innerHTML = `Prcp : ${response.data.main.humidity} %`;
+  let bigIcon = document.querySelector(`#bigIcon`);
+  bigIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 // search-bar
@@ -132,4 +137,9 @@ function handleLocalSearch(response) {
   returnWind.innerHTML = `${response.data.wind.speed} km/h`;
   let returnPrcp = document.querySelector(`#prcp`);
   returnPrcp.innerHTML = `Prcp : ${response.data.main.humidity} %`;
+  let bigIcon = document.querySelector(`#bigIcon`);
+  bigIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }

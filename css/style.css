@@ -19,29 +19,37 @@ input {
   margin-top: 50px;
 }
 
-.Searchbar {
-  max-width: 30%;
-  min-width: 30%;
-  margin-top: 3%;
+.app {
+  border: solid 5px;
+  border-color: white;
 }
 
-.localSubmit {
-  position: fixed;
-  margin-left: 22%;
+.Searchbar {
+  max-width: 30%;
+  min-width: 20%;
   margin-top: 3%;
 }
 
 .search {
   position: fixed;
-  margin-left: 4%;
+  max-width: 5%;
+  min-width: 5%;
+  margin-left: 21%;
   margin-top: 3%;
 }
+
+.localSubmit {
+  position: fixed;
+  max-width: 5%;
+  min-width: 5%;
+  margin-left: 27%;
+  margin-top: 3%;
+}
+
 .city {
   display: fixed;
   font-size: 40px;
-  padding-top: 12%;
-  padding-bottom: 0px;
-  margin-top: 15%;
+  padding-top: 18%;
   text-transform: uppercase;
   /* margin-top: 200px; Why does this not work ? */
 }
@@ -66,6 +74,7 @@ input {
   display: inline-block;
   font-size: 32px;
   margin-top: -40%;
+  text-transform: uppercase;
 }
 
 .bigIcon {
@@ -78,7 +87,13 @@ input {
   font-size: 46px;
   display: inline-block;
   margin-left: 15%;
-  margin-top: -5%;
+  margin-top: -2%;
+}
+
+.leftInfo {
+  display: block;
+  margin-top: -200%;
+  padding: top -40px;
 }
 
 .values {
@@ -87,9 +102,7 @@ input {
   color: #939aa9;
   font-size: 20px;
   margin-top: -30%;
-  margin-left: 48%;
-  min-width: 30%;
-  max-width: 30%;
+  margin-right: 15%;
 }
 
 .week {
@@ -109,7 +122,6 @@ input {
 }
 
 .fa-cloud-rain {
-  position: fixed;
   text-align: center;
   display: block;
   margin-left: 10px;
@@ -123,18 +135,23 @@ div {
 a:link {
   text-decoration: none;
   cursor: pointer;
-  color: white;
+  color: #5b6275;
 }
 
 a:visited {
-  color: white;
+  color: #5b6275;
 }
 
 a:hover {
-  color: blue;
+  color: white;
 }
 
 a:link,
 a:visited {
   text-decoration: none;
+}
+
+a {
+  display: inline-block;
+  padding-top: 5%;
 }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WeatherApp</title>
-    
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -19,115 +19,137 @@
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
   </head>
   <body>
-    <div class="container">
+    <div id="app" class="container">
       <h1>WTHR.</h1>
-      <div >
+      <div>
         <div class="row">
-        <div class="col">
-        <form 
-        id="searchCityBar" 
-        class="CitySearch" 
-        action="submit">
-          <input
-            class="Searchbar"
-            type="text"
-            name="name"
-            placeholder="enter a city"
-            id="searchBar"
-            value=""
-            required
-          /></div>
           <div class="col">
-          <input id="locality"
-          class="localSubmit" 
-          type="submit" 
-          value="HERE" />
-        </div>
-        <div class="col">
-          <input 
-          class="search" 
-          type="submit" 
-          id="citySearch" 
-          value="SRCH" 
-          />
-        </div>
-        </div>
-        </form>
-      </div>
-
-      <div class="row">
-        <div id=yourCity class="col city">CITY</div> 
-      </div>
-
-      <span class="day" id="day" >DAY</span>
-      <span class="time" id="time">Time</span>
-      </br>
-      <div id="mood" class="mood">MOOD</div>
-      </br>
-      <span class="bigIcon" id="bigIcon">Big</span>
-      <span class="degrees"id = "degrees">X°C</span>
-     
-        
-    
-     
-        <div class="values">
-          <span id="prcp">
-            Prcp : ?%
-          </span>
-            <br />
-          <span id="wind">
-          Wnd : ?km/h
-          </span>  
-        </div>
-      <br />
-      <div class="row week">
-        <div class="col days">
-          MON
-          <br />
-          <div class="smallIcon"><i class="fa-solid fa-cloud-rain"></i>
+            <form id="searchCityBar" class="CitySearch" action="submit">
+              <input
+                class="Searchbar"
+                type="text"
+                name="name"
+                placeholder="enter a city"
+                id="searchBar"
+                value=""
+                required
+              />
+              <div class="col">
+                <input
+                  id="locality"
+                  class="localSubmit"
+                  type="submit"
+                  value="HERE"
+                />
+              </div>
+              <div class="col">
+                <input
+                  class="search"
+                  type="submit"
+                  id="citySearch"
+                  value="SRCH"
+                />
+              </div>
+            </form>
           </div>
-          21°C
-        
+
+          <fieldset>
+            <section id="leftInfo">
+              <div class="row">
+                <div id="yourCity" class="col city">CITY</div>
+              </div>
+
+              <span class="day" id="day">DAY</span>
+              <span class="time" id="time">Time</span>
+              <br />
+              <div id="mood" class="mood">MOOD</div>
+              <br />
+              <img href="" alt="weather" id="bigIcon" />
+              <span class="degrees" id="degrees">X°C</span>
+            </section>
+
+            <section>
+              <div class="values">
+                <span id="prcp"> Prcp : ?% </span>
+                <br />
+                <span id="wind"> Wnd : ?km/h </span>
+              </div>
+            </section>
+
+            <section>
+              <br />
+              <div class="row week">
+                <div class="col days">
+                  MON
+                  <br />
+                  <div class="smallIcon">
+                    <i class="fa-solid fa-cloud-rain"></i>
+                  </div>
+                  21°C
+                </div>
+                <div class="col days">
+                  TUE
+                  <br />
+                  <div class="smallIcon">
+                    <i class="fa-solid fa-cloud-rain"></i>
+                  </div>
+                  21°C
+                </div>
+                <div class="col days">
+                  WED
+                  <br />
+                  <div class="smallIcon">
+                    <i class="fa-solid fa-cloud-rain"></i>
+                  </div>
+                  21°C
+                </div>
+                <div class="col days">
+                  THU
+                  <br />
+                  <div class="smallIcon">
+                    <i class="fa-solid fa-cloud-rain"></i>
+                  </div>
+                  21°C
+                </div>
+                <div class="col days">
+                  FRI
+                  <br />
+                  <div class="smallIcon">
+                    <i class="fa-solid fa-cloud-rain"></i>
+                  </div>
+                  21°C
+                </div>
+                <div class="col days">
+                  SAT
+                  <br />
+                  <div class="smallIcon">
+                    <i class="fa-solid fa-cloud-rain"></i>
+                  </div>
+                  21°C
+                </div>
+                <div class="col days">
+                  SUN
+                  <br />
+                  <div class="smallIcon">
+                    <i class="fa-solid fa-cloud-rain"></i>
+                  </div>
+                  21°C
+                </div>
+              </div>
+            </section>
+          </fieldset>
+
+          <footer>
+            <a
+              id="author"
+              href=" https://github.com/studioalexverhaest/Weather-app-shecodes.git"
+              >by Studio Alex Verhaest</a
+            >
+          </footer>
         </div>
-        <div class="col days">
-          TUE
-          <br />
-          <div class="smallIcon"><i class="fa-solid fa-cloud-rain"></i></div>
-          21°C
-        </div>
-        <div class="col days">
-          WED
-          <br />
-          <div class="smallIcon"><i class="fa-solid fa-cloud-rain"></i></div>
-          21°C
-        </div>
-        <div class="col days">
-          THU
-          <br />
-          <div class="smallIcon"><i class="fa-solid fa-cloud-rain"></i></div>
-          21°C
-        </div>
-        <div class="col days">
-          FRI
-          <br />
-          <div class="smallIcon"><i class="fa-solid fa-cloud-rain"></i></div>
-          21°C
-        </div>
-        <div class="col days">
-          SAT
-          <br />
-          <div class="smallIcon"><i class="fa-solid fa-cloud-rain"></i></div>
-          21°C
-        </div>
-        <div class="col days">
-          SUN
-          <br />
-          <div class="smallIcon"><i class="fa-solid fa-cloud-rain"></i></div>
-          21°C
-        </div>
+
+        <script src="src/index.js"></script>
       </div>
     </div>
-    <a href=" https://github.com/studioalexverhaest/Weather-app-shecodes.git">by Studio Alex Verhaest</a>
-    <script src="src/index.js"> </script>
   </body>
 </html>
