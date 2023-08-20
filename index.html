@@ -32,7 +32,7 @@
                 placeholder="enter a city"
                 id="searchBar"
                 value=""
-                required
+                autocomplete="off"
               />
               <div class="col">
                 <input
@@ -64,8 +64,15 @@
               <br />
               <div id="mood" class="mood">MOOD</div>
               <br />
-              <img href="" alt="weather" id="bigIcon" />
-              <span class="degrees" id="degrees">X°C</span>
+              <img
+                href="http://openweathermap.org/img/wn/01d@2x.png"
+                alt="weather"
+                id="bigIcon"
+                width="66px"
+              />
+              <span class="degrees" id="degrees">X</span>
+              <a href="#" id="celcius-icon"> °C </a>
+              <a href="#" id="fahrenheit-icon"> °F </a>
             </section>
 
             <section>
