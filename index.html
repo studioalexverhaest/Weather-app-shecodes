@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WeatherApp</title>
-
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -32,6 +31,7 @@
                 placeholder="enter a city"
                 id="searchBar"
                 value=""
+                required
                 autocomplete="off"
               />
               <div class="col">
@@ -52,18 +52,17 @@
               </div>
             </form>
           </div>
-
           <fieldset>
             <section id="leftInfo">
               <div class="row">
                 <div id="yourCity" class="col city">CITY</div>
               </div>
-
               <span class="day" id="day">DAY</span>
               <span class="time" id="time">Time</span>
               <br />
               <div id="mood" class="mood">MOOD</div>
               <br />
+
               <img
                 href="http://openweathermap.org/img/wn/01d@2x.png"
                 alt="weather"
@@ -82,7 +81,6 @@
                 <span id="wind"> Wnd : ?km/h </span>
               </div>
             </section>
-
             <section>
               <br />
               <div class="row week">
@@ -145,7 +143,6 @@
               </div>
             </section>
           </fieldset>
-
           <footer>
             <a
               id="author"
@@ -154,7 +151,6 @@
             >
           </footer>
         </div>
-
         <script src="src/index.js"></script>
       </div>
     </div>

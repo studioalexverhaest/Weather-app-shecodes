@@ -4,11 +4,9 @@ body {
   margin: 60px auto;
   font-family: "Cerebri Sans", Helvetica, Arial, sans-serif;
 }
-
 h1 {
   position: fixed;
 }
-
 input {
   color: White;
   background-color: black;
@@ -18,18 +16,15 @@ input {
   position: fixed;
   margin-top: 50px;
 }
-
 .app {
   border: solid 5px;
   border-color: white;
 }
-
 .Searchbar {
   max-width: 30%;
   min-width: 20%;
   margin-top: 3%;
 }
-
 .search {
   position: fixed;
   max-width: 5%;
@@ -37,7 +32,6 @@ input {
   margin-left: 21%;
   margin-top: 3%;
 }
-
 .localSubmit {
   position: fixed;
   max-width: 5%;
@@ -45,7 +39,6 @@ input {
   margin-left: 27%;
   margin-top: 3%;
 }
-
 .city {
   display: fixed;
   font-size: 40px;
@@ -53,7 +46,6 @@ input {
   text-transform: uppercase;
   /* margin-top: 200px; Why does this not work ? */
 }
-
 .day {
   font-size: 42px;
   color: #939aa9;
@@ -61,7 +53,6 @@ input {
   padding-top: -90px;
   display: inline-block;
 }
-
 .time {
   color: #5b6275;
   font-size: 18px;
@@ -77,9 +68,16 @@ input {
   text-transform: uppercase;
 }
 
+.bigIcon {
+  background-color: red;
+  display: inline-block;
+  margin-top: -100px;
+}
+
 .degrees {
   font-size: 46px;
   display: inline-block;
+  margin-left: 15%;
   margin-left: 1%;
   margin-top: -2%;
 }
@@ -89,7 +87,6 @@ input {
   margin-top: -200%;
   padding: top -40px;
 }
-
 .values {
   display: block;
   text-align: right;
@@ -98,53 +95,43 @@ input {
   margin-top: -30%;
   margin-right: 15%;
 }
-
 .week {
   display: fixed;
   max-width: 90%;
   padding-top: 20%;
 }
-
 .days,
 .weekdegrees {
   color: #5b6275;
   max-width: 40%;
 }
-
 .smallIcon {
   margin-bottom: 20px;
 }
-
 .fa-cloud-rain {
   text-align: center;
   display: block;
   margin-left: 10px;
 }
-
 h1,
 div {
   color: white;
 }
-
 a:link {
   text-decoration: none;
   cursor: pointer;
   color: #5b6275;
 }
-
 a:visited {
   color: #5b6275;
 }
-
 a:hover {
   color: white;
 }
-
 a:link,
 a:visited {
   text-decoration: none;
 }
-
 a {
   display: inline-block;
   padding-top: 5%;
