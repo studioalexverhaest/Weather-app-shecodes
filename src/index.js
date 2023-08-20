@@ -93,12 +93,14 @@ function handleLocalSearch(response) {
   );
 }
 
-let localButton = document.querySelector(`#locality`);
-localButton.addEventListener("click", handleButton);
 function handleButton(event) {
   navigator.geolocation.getCurrentPosition(retrievePosition);
   console.log("click");
 }
+
+let localButton = document.querySelector(`#locality`);
+localButton.addEventListener("click", handleButton);
+
 function retrievePosition(position) {
   console.log(position);
   let apiKey = "64469ac67e6dc941feb5b50915a18dc7";
@@ -109,15 +111,15 @@ function retrievePosition(position) {
 }
 
 //CONVERSION TO FAHRENHEIT
-// function displayFahrenheitTemperature(event) {
-//   event.preventDefault();
-//   let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
-//   let temperature = document.querySelector(`#degrees`);
-//   temperature.innerHTML = `${Math.round(fahrenheitTemperature)}`;
-// }
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
+  let temperature = document.querySelector(`#degrees`);
+  temperature.innerHTML = `${Math.round(fahrenheitTemperature)}`;
+}
 
-// let fahrenheitIcon = document.querySelector(`#fahrenheit-icon`);
-// fahrenheitIcon.addEventListener("click", displayFahrenheitTemperature);
+let fahrenheitIcon = document.querySelector(`#fahrenheit-icon`);
+fahrenheitIcon.addEventListener("click", displayFahrenheitTemperature);
 
 // back to celcius does not work
 // function displayCelciusTemperature(event) {
