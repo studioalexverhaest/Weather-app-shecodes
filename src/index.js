@@ -93,6 +93,14 @@ function handleLocalSearch(response) {
   );
 }
 
+function retrievePosition(position) {
+  let apiKey = "64469ac67e6dc941feb5b50915a18dc7";
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+  axios.get(url).then(handleLocalSearch);
+}
+
 function handleButton(event) {
   navigator.geolocation.getCurrentPosition(retrievePosition);
   console.log("click");
@@ -101,25 +109,16 @@ function handleButton(event) {
 let localButton = document.querySelector(`#locality`);
 localButton.addEventListener("click", handleButton);
 
-function retrievePosition(position) {
-  console.log(position);
-  let apiKey = "64469ac67e6dc941feb5b50915a18dc7";
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
-  axios.get(url).then(handleLocalSearch);
-}
-
 //CONVERSION TO FAHRENHEIT
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
-  let temperature = document.querySelector(`#degrees`);
-  temperature.innerHTML = `${Math.round(fahrenheitTemperature)}`;
-}
+// function displayFahrenheitTemperature(event) {
+//   event.preventDefault();
+//   let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
+//   let temperature = document.querySelector(`#degrees`);
+//   temperature.innerHTML = `${Math.round(fahrenheitTemperature)}`;
+// }
 
-let fahrenheitIcon = document.querySelector(`#fahrenheit-icon`);
-fahrenheitIcon.addEventListener("click", displayFahrenheitTemperature);
+// let fahrenheitIcon = document.querySelector(`#fahrenheit-icon`);
+// fahrenheitIcon.addEventListener("click", displayFahrenheitTemperature);
 
 // back to celcius does not work
 // function displayCelciusTemperature(event) {
