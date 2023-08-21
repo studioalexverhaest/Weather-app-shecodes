@@ -23,7 +23,12 @@
       <div>
         <div class="row">
           <div class="col">
-            <form id="searchCityBar" class="CitySearch" action="submit">
+            <form
+              onkeydown="return event.key != 'Enter';"
+              id="searchCityBar"
+              class="CitySearch"
+              action="submit"
+            >
               <input
                 class="Searchbar"
                 type="text"
@@ -38,7 +43,7 @@
                 <input
                   id="locality"
                   class="localSubmit"
-                  type="submit"
+                  type="button"
                   value="HERE"
                 />
               </div>
