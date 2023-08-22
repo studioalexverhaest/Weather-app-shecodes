@@ -19,6 +19,7 @@ function setToday() {
   today = weekdays[now.getDay()];
   day.innerHTML = `${today}`;
 }
+
 setToday();
 function setTime() {
   let currentTime = document.querySelector("#time");
@@ -27,6 +28,7 @@ function setTime() {
   currentTime.innerHTML = `${theHour} : ${theMinutes}`;
 }
 setTime();
+
 // search city reflected in UI + livesearch
 function search(event) {
   event.preventDefault();
@@ -45,9 +47,17 @@ function getForecast(coordinates) {
   console.log(coordinates);
   let apiKey = "64469ac67e6dc941feb5b50915a18dc7";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
+
   axios.get(apiUrl).then(displayForecast);
 }
+
+// ////THE MARY FUNCTION
+// function maryFunction(response) {
+//   console.log(response);
+//   if (response === "few clouds") {
+//     alert("clouds ahead!");
+//   }
+// }
 
 ////// IMPLEMENT SEARCH ENGINE
 function showWeather(response) {
@@ -68,8 +78,18 @@ function showWeather(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-
+  // console.log(response.data.weather[0].description);
   getForecast(response.data.coord);
+  // maryFunction(response.data.weather[0].description);
+}
+
+///TIMESTAMP TO READABLE FORMAT
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+
+  return days[day];
 }
 
 ///FORECAST
@@ -79,24 +99,29 @@ function displayForecast(response) {
   let forecastElement = document.querySelector(`#forecast`);
   let forecastHTML = `<div id=week class="row week">`;
 
-  forecast.forEach(function (forecastday) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col days">
-                    ${forecastday.dt}
+  forecast.forEach(function (forecastday, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col days">
+                    ${formatDay(forecastday.dt)}
                     <div class="smallIcon">
-                      <img src="http://openweathermap.org/img/wn/${forecastday.weather[0].icon}@2x.png"
+                      <img src="http://openweathermap.org/img/wn/${
+                        forecastday.weather[0].icon
+                      }@2x.png"
                       width = 42px 
                       alt = "weathericons"/>
                     </div>
-                    ${forecastday.temp.day}
+                    ${Math.round(forecastday.temp.day)}
                   `;
-    forecastHTML = forecastHTML + `</div>`;
+      forecastHTML =
+        forecastHTML +
+        `</div>
+ `;
+    }
   });
   forecastElement.innerHTML = forecastHTML;
-  console.log(response.data.daily);
 }
-
 // SEARCH-BAR
 function liveSearch(event) {
   event.preventDefault();
