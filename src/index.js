@@ -51,13 +51,67 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(displayForecast);
 }
 
-// ////THE MARY FUNCTION
-// function maryFunction(response) {
-//   console.log(response);
-//   if (response === "few clouds") {
-//     alert("clouds ahead!");
-//   }
-// }
+////THE MARY FUNCTION
+function maryFunction(response) {
+  console.log(response);
+  let videoUrl = document.querySelector(`#video`);
+  if (response === "clear sky") {
+    videoUrl.setAttribute("src", "https://www.youtube.com/embed/L5q9YGj3hNw");
+  } else {
+    if (response === "few clouds") {
+      videoUrl.setAttribute("src", "https://www.youtube.com/embed/fCmAD0TwGcQ");
+    } else {
+      if (response === "scattered clouds") {
+        videoUrl.setAttribute(
+          "src",
+          "https://www.youtube.com/embed/6OtPSfyZXNw"
+        );
+      } else {
+        if (response === "broken clouds") {
+          videoUrl.setAttribute(
+            "src",
+            "https://www.youtube.com/embed/6OtPSfyZXNw"
+          );
+        } else {
+          if (response === "shower rain") {
+            videoUrl.setAttribute(
+              "src",
+              "https://www.youtube.com/embed/6OtPSfyZXNw"
+            );
+          } else {
+            if (response === "rain") {
+              videoUrl.setAttribute(
+                "src",
+                "https://www.youtube.com/embed/6OtPSfyZXNw"
+              );
+            } else {
+              if (response === "thunderstorm") {
+                videoUrl.setAttribute(
+                  "src",
+                  "https://www.youtube.com/embed/6OtPSfyZXNw"
+                );
+              } else {
+                if (response === "snow") {
+                  videoUrl.setAttribute(
+                    "src",
+                    "https://www.youtube.com/embed/6OtPSfyZXNw"
+                  );
+                } else {
+                  if (response === "mist") {
+                    videoUrl.setAttribute(
+                      "src",
+                      "https://www.youtube.com/embed/6OtPSfyZXNw"
+                    );
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 ////// IMPLEMENT SEARCH ENGINE
 function showWeather(response) {
@@ -80,7 +134,7 @@ function showWeather(response) {
   );
   // console.log(response.data.weather[0].description);
   getForecast(response.data.coord);
-  // maryFunction(response.data.weather[0].description);
+  maryFunction(response.data.weather[0].description);
 }
 
 ///TIMESTAMP TO READABLE FORMAT

@@ -115,6 +115,17 @@ input {
   margin-left: 10px;
 }
 
+iframe {
+  margin-top: 40px;
+  border: 1px solid;
+  border-radius: 20px;
+}
+
+figcaption {
+  color: #939aa9;
+  font-size: small;
+}
+
 h1,
 div {
   color: white;
