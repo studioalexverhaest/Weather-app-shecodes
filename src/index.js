@@ -64,43 +64,43 @@ function maryFunction(response) {
       if (response === "scattered clouds") {
         videoUrl.setAttribute(
           "src",
-          "https://www.youtube.com/embed/6OtPSfyZXNw"
+          "https://www.dailymotion.com/embed/video/xlomoa?autoplay=1"
         );
       } else {
         if (response === "broken clouds") {
           videoUrl.setAttribute(
             "src",
-            "https://www.youtube.com/embed/6OtPSfyZXNw"
+            "https://www.dailymotion.com/embed/video/xlomoa?autoplay=1"
           );
         } else {
           if (response === "shower rain") {
             videoUrl.setAttribute(
               "src",
-              "https://www.youtube.com/embed/6OtPSfyZXNw"
+              "https://www.dailymotion.com/embed/video/xlomoa?autoplay=1"
             );
           } else {
             if (response === "rain") {
               videoUrl.setAttribute(
                 "src",
-                "https://www.youtube.com/embed/6OtPSfyZXNw"
+                "https://www.dailymotion.com/embed/video/xlomoa?autoplay=1"
               );
             } else {
               if (response === "thunderstorm") {
                 videoUrl.setAttribute(
                   "src",
-                  "https://www.youtube.com/embed/6OtPSfyZXNw"
+                  "https://www.dailymotion.com/embed/video/xlomoa?autoplay=1"
                 );
               } else {
                 if (response === "snow") {
                   videoUrl.setAttribute(
                     "src",
-                    "https://www.youtube.com/embed/6OtPSfyZXNw"
+                    "https://www.dailymotion.com/embed/video/xlomoa?autoplay=1"
                   );
                 } else {
                   if (response === "mist") {
                     videoUrl.setAttribute(
                       "src",
-                      "https://www.youtube.com/embed/6OtPSfyZXNw"
+                      "https://www.dailymotion.com/embed/video/xlomoa?autoplay=1"
                     );
                   }
                 }
