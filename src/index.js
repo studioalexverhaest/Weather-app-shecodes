@@ -61,6 +61,26 @@ function showWeather(response) {
   );
 }
 
+///FORECAST
+function displayForecast() {
+  let forecastElement = document.querySelector(`#forecast`);
+  let forecastHTML = `<div id=week class="row week">`;
+  let days = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-1 days">
+                    ${day}
+                    <div class="smallIcon">
+                      <i class="fa-solid fa-cloud-rain"></i>
+                    </div>
+                    21°C
+                  </div>`;
+    forecastHTML = forecastHTML + `</div>`;
+  });
+  forecastElement.innerHTML = forecastHTML;
+}
+
 // SEARCH-BAR
 function liveSearch(event) {
   event.preventDefault();
@@ -112,5 +132,8 @@ function displayCelciusTemperature(event) {
 let celciusIcon = document.querySelector(`#celcius-icon`);
 celciusIcon.addEventListener("click", displayCelciusTemperature);
 
+displayForecast();
+
 let celciusTemperature = null;
+
 searchCity("Schellebelle");

@@ -95,11 +95,13 @@ input {
   margin-top: -30%;
   margin-right: 15%;
 }
+
 .week {
-  display: fixed;
+  display: inline-block;
   max-width: 90%;
   padding-top: 20%;
 }
+
 .days,
 .weekdegrees {
   color: #5b6275;
@@ -113,6 +115,7 @@ input {
   display: block;
   margin-left: 10px;
 }
+
 h1,
 div {
   color: white;
