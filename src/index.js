@@ -39,9 +39,18 @@ function search(event) {
 let form = document.querySelector("#searchCityBar");
 form.addEventListener("submit", search);
 
+////FORECAST FUNCTION
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "64469ac67e6dc941feb5b50915a18dc7";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
 ////// IMPLEMENT SEARCH ENGINE
 function showWeather(response) {
-  console.log(response.data);
   let cityName = document.querySelector(`#yourCity`);
   cityName.innerHTML = `${response.data.name}`;
   celciusTemperature = response.data.main.temp;
@@ -59,26 +68,29 @@ function showWeather(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  getForecast(response.data.coord);
 }
 
 ///FORECAST
-function displayForecast() {
+function displayForecast(response) {
   let forecastElement = document.querySelector(`#forecast`);
   let forecastHTML = `<div id=week class="row week">`;
   let days = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
-      `<div class="col-1 days">
+      `<div class="col days">
                     ${day}
                     <div class="smallIcon">
                       <i class="fa-solid fa-cloud-rain"></i>
                     </div>
                     21°C
-                  </div>`;
+                  `;
     forecastHTML = forecastHTML + `</div>`;
   });
   forecastElement.innerHTML = forecastHTML;
+  console.log(response.data.daily);
 }
 
 // SEARCH-BAR
@@ -131,8 +143,6 @@ function displayCelciusTemperature(event) {
 
 let celciusIcon = document.querySelector(`#celcius-icon`);
 celciusIcon.addEventListener("click", displayCelciusTemperature);
-
-displayForecast();
 
 let celciusTemperature = null;
 
