@@ -74,18 +74,22 @@ function showWeather(response) {
 
 ///FORECAST
 function displayForecast(response) {
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector(`#forecast`);
   let forecastHTML = `<div id=week class="row week">`;
-  let days = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
-  days.forEach(function (day) {
+
+  forecast.forEach(function (forecastday) {
     forecastHTML =
       forecastHTML +
       `<div class="col days">
-                    ${day}
+                    ${forecastday.dt}
                     <div class="smallIcon">
-                      <i class="fa-solid fa-cloud-rain"></i>
+                      <img src="http://openweathermap.org/img/wn/${forecastday.weather[0].icon}@2x.png"
+                      width = 42px 
+                      alt = "weathericons"/>
                     </div>
-                    21°C
+                    ${forecastday.temp.day}
                   `;
     forecastHTML = forecastHTML + `</div>`;
   });
