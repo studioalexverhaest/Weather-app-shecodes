@@ -59,7 +59,10 @@ function maryFunction(response) {
     videoUrl.setAttribute("src", "https://www.youtube.com/embed/L5q9YGj3hNw");
   } else {
     if (response === "few clouds") {
-      videoUrl.setAttribute("src", "https://www.youtube.com/embed/fCmAD0TwGcQ");
+      videoUrl.setAttribute(
+        "src",
+        "https://www.dailymotion.com/embed/video/xlomoa?autoplay=1"
+      );
     } else {
       if (response === "scattered clouds") {
         videoUrl.setAttribute(
