@@ -55,64 +55,16 @@ function getForecast(coordinates) {
 function maryFunction(response) {
   console.log(response);
   let videoUrl = document.querySelector(`#video`);
-  if (response === "clear sky") {
-    videoUrl.setAttribute("src", "https://www.youtube.com/embed/L5q9YGj3hNw");
+  if (response.includes(`rain`)) {
+    videoUrl.setAttribute(
+      "src",
+      "https://www.dailymotion.com/embed/video/xlomoa?autoplay=1"
+    );
   } else {
-    if (response === "few clouds") {
-      videoUrl.setAttribute(
-        "src",
-        "https://www.dailymotion.com/embed/video/xlomoa?autoplay=1"
-      );
-    } else {
-      if (response === "scattered clouds") {
-        videoUrl.setAttribute(
-          "src",
-          "https://www.dailymotion.com/embed/video/xlomoa?autoplay=1"
-        );
-      } else {
-        if (response === "broken clouds") {
-          videoUrl.setAttribute(
-            "src",
-            "https://www.dailymotion.com/embed/video/xlomoa?autoplay=1"
-          );
-        } else {
-          if (response === "shower rain") {
-            videoUrl.setAttribute(
-              "src",
-              "https://www.dailymotion.com/embed/video/xlomoa?autoplay=1"
-            );
-          } else {
-            if (response === "rain") {
-              videoUrl.setAttribute(
-                "src",
-                "https://www.dailymotion.com/embed/video/xlomoa?autoplay=1"
-              );
-            } else {
-              if (response === "thunderstorm") {
-                videoUrl.setAttribute(
-                  "src",
-                  "https://www.dailymotion.com/embed/video/xlomoa?autoplay=1"
-                );
-              } else {
-                if (response === "snow") {
-                  videoUrl.setAttribute(
-                    "src",
-                    "https://www.dailymotion.com/embed/video/xlomoa?autoplay=1"
-                  );
-                } else {
-                  if (response === "mist") {
-                    videoUrl.setAttribute(
-                      "src",
-                      "https://www.dailymotion.com/embed/video/xlomoa?autoplay=1"
-                    );
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
+    videoUrl.setAttribute(
+      "src",
+      "https://www.dailymotion.com/embed/video/x531kz0?autoplay=1"
+    );
   }
 }
 
@@ -168,8 +120,7 @@ function displayForecast(response) {
                       }@2x.png"
                       width = 42px 
                       alt = "weathericons"/>
-                    </div>
-                    ${Math.round(forecastday.temp.day)}
+                    </div> ${Math.round(forecastday.temp.day)}
                   `;
       forecastHTML =
         forecastHTML +
